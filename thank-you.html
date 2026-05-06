@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You | Jenis Institution</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.thankyou-wrap{
+  min-height:calc(100vh - 72px);display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#002070 0%,#003087 55%,#0D4BAF 100%);
+  padding:2rem 1.5rem;
+}
+.thankyou-card{
+  background:white;border-radius:var(--rl);padding:3rem 2.5rem;
+  max-width:560px;width:100%;text-align:center;
+  box-shadow:var(--shadow-lg);
+  animation:popIn .6s cubic-bezier(.34,1.56,.64,1) both;
+}
+@keyframes popIn{from{transform:scale(0.85);opacity:0}to{transform:scale(1);opacity:1}}
+.ty-icon{font-size:4rem;margin-bottom:1rem;display:block}
+.ty-title{font-family:var(--font-head);font-size:2rem;color:var(--dark);margin-bottom:.75rem}
+.ty-sub{font-size:1rem;color:var(--muted);line-height:1.75;margin-bottom:2rem}
+.ty-highlight{
+  background:var(--blue-light);border-radius:var(--r);
+  padding:1rem 1.25rem;margin-bottom:2rem;
+  font-size:.9rem;color:var(--blue);font-weight:600;
+}
+.ty-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.ty-timer{font-size:.82rem;color:var(--muted);margin-top:1.5rem}
+</style>
+</head>
+<body>
+  <nav id="nav">
+    <div class="nav-wrap">
+      <a href="index.html" class="nav-brand">
+        <img src="images/logo.png" alt="Jenis Institution" class="nav-logo-img">
+        <div class="nav-brand-text">
+          <div class="nav-brand-title">Jenis Institution</div>
+          <div class="nav-brand-sub">14+ Years of Excellence</div>
+        </div>
+      </a>
+  
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="german-classes-nigdi-pimpri-chinchwad.html">German</a>
+        <a href="spoken-english-course-nigdi-pimpri-chinchwad.html">English</a>
+        <a href="french-classes-nigdi-pimpri-chinchwad.html">French</a>
+        <a href="ielts-classes-nigdi-pimpri-chinchwad.html">IELTS</a>
+        <a href="education-abroad-nigdi-pimpri-chinchwad.html">Overseas</a>
+        <a href="contact.html" class="nav-cta-btn">📞 Enroll Now</a>
+      </div>
+  
+      <button class="hamburger" id="ham" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  
+  <div class="mob-menu" id="mmenu">
+    <a href="index.html" onclick="cm()">🏠 Home</a>
+    <a href="german-classes-nigdi-pimpri-chinchwad.html" onclick="cm()">🇩🇪 German Classes</a>
+    <a href="spoken-english-course-nigdi-pimpri-chinchwad.html" onclick="cm()">🗣️ Spoken English</a>
+    <a href="french-classes-nigdi-pimpri-chinchwad.html" onclick="cm()">🇫🇷 French Classes</a>
+    <a href="ielts-classes-nigdi-pimpri-chinchwad.html" onclick="cm()">📝 IELTS Classes</a>
+    <a href="education-abroad-nigdi-pimpri-chinchwad.html" onclick="cm()">✈️ Overseas Education</a>
+    <a href="contact.html" onclick="cm()" class="mob-cta">📞 Book Free Demo Class</a>
+  </div>
+
+<div class="pt-nav">
+  <div class="thankyou-wrap">
+    <div class="thankyou-card">
+      <span class="ty-icon">✅</span>
+      <h1 class="ty-title">Enquiry Received!</h1>
+      <p class="ty-sub">
+        Thank you for reaching out to Jenis Institution. Your enquiry has been successfully sent.
+        Our team will call you within a few hours to schedule your <strong>free demo class</strong>.
+      </p>
+      <div class="ty-highlight">
+        📞 Can't wait? Call us now:<br>
+        <a href="tel:09850775215" style="color:var(--blue);font-size:1.05rem">+91 98507 75215</a> &nbsp;/&nbsp;
+        <a href="tel:07823801899" style="color:var(--blue);font-size:1.05rem">+91 78238 01899</a>
+      </div>
+      <div class="ty-actions">
+        <a href="index.html" class="btn-blue">🏠 Back to Home</a>
+        <a href="https://wa.me/919850775215" class="btn-red">💬 WhatsApp Us</a>
+      </div>
+      <div class="ty-timer" id="redirect-msg">Redirecting to home in <span id="count">10</span> seconds…</div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+let t = 10;
+const el = document.getElementById('count');
+const interval = setInterval(()=>{
+  t--;
+  if(el) el.textContent = t;
+  if(t <= 0){ clearInterval(interval); window.location.href = 'index.html'; }
+}, 1000);
+</script>
+</body>
+</html>
